@@ -37,6 +37,6 @@ public class Bishop extends Figure {
 
     @Override
     public boolean validMoves(int col, int row) {
-        return false;
+        return Math.abs(this.col - col) == Math.abs(this.row - row);
     }
 }

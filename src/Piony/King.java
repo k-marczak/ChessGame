@@ -41,6 +41,6 @@ public class King extends Figure{
 
     @Override
     public boolean validMoves(int col, int row) {
-        return false;
+        return this.col == -1;
     }
 }

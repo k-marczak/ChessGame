@@ -33,14 +33,8 @@ public class Queen extends Figure{
             }
         }
     }
-    public void setCol(int newCol, int newRow) {
-        this.col = newCol;
-        this.row = newRow;
-    }
-
 
     public boolean validMoves(int col, int row) {
-
-        return false;
+        return this.col == col || this.row == row || Math.abs(this.col - col) == Math.abs(this.row - row);
     }
 }

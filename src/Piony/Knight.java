@@ -36,6 +36,6 @@ public class Knight extends Figure{
 
     @Override
     public boolean validMoves(int col, int row) {
-        return false;
+        return Math.abs(col - this.col) * Math.abs(row - this.row) == 2;
     }
 }
