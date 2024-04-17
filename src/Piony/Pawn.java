@@ -49,4 +49,9 @@ public class Pawn extends Figure{
             return this.col == col && row == this.row - colorIndex && board.getFigure(col, row) == null;
         }
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        return false;
+    }
 }

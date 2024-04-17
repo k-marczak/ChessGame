@@ -37,4 +37,9 @@ public class Queen extends Figure{
     public boolean validMoves(int col, int row) {
         return this.col == col || this.row == row || Math.abs(this.col - col) == Math.abs(this.row - row);
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        return false;
+    }
 }

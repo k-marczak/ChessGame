@@ -39,4 +39,9 @@ public class Bishop extends Figure {
     public boolean validMoves(int col, int row) {
         return Math.abs(this.col - col) == Math.abs(this.row - row);
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        return false;
+    }
 }

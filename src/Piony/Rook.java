@@ -39,4 +39,41 @@ public class Rook extends Figure{
     public boolean validMoves(int col, int row) {
         return this.col == col || this.row == row;
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        // Lewo...
+        if(this.col > col){
+            for(int i = this.col - 1; i > col; i--){
+                if(board.getFigure(i, this.row) != null){
+                    return true;
+                }
+            }
+        }
+        // Prawo...
+        if(this.col < col){
+            for(int i = this.col + 1; i < col; i++){
+                if(board.getFigure(i, this.row) != null){
+                    return true;
+                }
+            }
+        }
+        // Góra...
+        if(this.row > row){
+            for(int i = this.row - 1; i > row; i--){
+                if(board.getFigure(this.col, i) != null){
+                    return true;
+                }
+            }
+        }
+        // Dół...
+        if(this.row < row){
+            for(int i = this.row + 1; i < row; i++){
+                if(board.getFigure(this.col, i) != null){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

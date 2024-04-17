@@ -43,4 +43,9 @@ public class King extends Figure{
     public boolean validMoves(int col, int row) {
         return this.col == -1;
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        return false;
+    }
 }

@@ -42,7 +42,7 @@ public class Move implements MouseListener {
         System.out.println("Mouse released!");
         newX = e.getX() / 100;
         newY = e.getY() / 100;
-        if(board.selectedFigure.validMoves(newX, newY)){
+        if((board.selectedFigure.validMoves(newX, newY) && !(board.selectedFigure.checkIfCollidingWithPiece(newX, newY)))){
             board.selectedFigure.col = newX;
             board.selectedFigure.row = newY;
         }

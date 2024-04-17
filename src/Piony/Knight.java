@@ -38,4 +38,9 @@ public class Knight extends Figure{
     public boolean validMoves(int col, int row) {
         return Math.abs(col - this.col) * Math.abs(row - this.row) == 2;
     }
+
+    @Override
+    public boolean checkIfCollidingWithPiece(int col, int row) {
+        return false;
+    }
 }

@@ -42,7 +42,7 @@ public class Board{
         pieces.add(new King(this, 4, 7, true, "King"));
         pieces.add(new Bishop(this, 5, 7, true, "Bishop"));
         pieces.add(new Knight(this, 6, 7, true, "Knight"));
-        pieces.add(new Rook(this, 7, 7, true, "Rook"));
+        pieces.add(new Rook(this, 4, 4, true, "Rook"));
 
         // Czarne Piony
         pieces.add(new Pawn(this, 0, 1, false, "Pawn"));

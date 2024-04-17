@@ -29,4 +29,7 @@ public abstract class Figure{
     }
 
     public abstract boolean validMoves(int col, int row);
+
+    public abstract boolean checkIfCollidingWithPiece(int col, int row);
+
 }
