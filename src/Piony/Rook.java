@@ -34,7 +34,6 @@ public class Rook extends Figure{
         }
     }
 
-
     @Override
     public boolean validMoves(int col, int row) {
         return this.col == col || this.row == row;

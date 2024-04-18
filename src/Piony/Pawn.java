@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Pawn extends Figure{
+public class Pawn extends Figure {
 
     boolean isFirstMove = true;
 
@@ -20,14 +20,14 @@ public class Pawn extends Figure{
         this.name = name;
 
 
-        if(!isWhite){
+        if (!isWhite) {
             try {
                 this.image = ImageIO.read(new File("PAWN.png"));
             } catch (IOException e) {
                 System.out.println("Nie ma pliku...");
                 throw new RuntimeException(e);
             }
-        }else{
+        } else {
             try {
                 this.image = ImageIO.read(new File("Pawn_white.png"));
             } catch (IOException e) {
@@ -38,17 +38,21 @@ public class Pawn extends Figure{
     }
 
 
+
+
     @Override
     public boolean validMoves(int col, int row) {
-        if(isFirstMove){
+        if (isFirstMove) {
             int colorIndex = isWhite ? 2 : -2;
             isFirstMove = false;
-            return this.col == col && row == this.row - colorIndex && board.getFigure(col, row) == null;
-        }else {
+            return this.col == col && row == this.row - colorIndex && (board.getFigure(col, row) == null);
+        } else {
             int colorIndex = isWhite ? 1 : -1;
-            return this.col == col && row == this.row - colorIndex && board.getFigure(col, row) == null;
+            return this.col == col && row == this.row - colorIndex && board.getFigure(col, row) == null ;
         }
     }
+
+
 
     @Override
     public boolean checkIfCollidingWithPiece(int col, int row) {

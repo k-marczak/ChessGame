@@ -17,6 +17,8 @@ public class Board{
     public Figure selectedFigure;
 
 
+
+
     // ArrayLista w której są wszystkie figury w grze.
     public ArrayList<Figure> pieces = new ArrayList<>();
 
@@ -88,7 +90,6 @@ public class Board{
 
     // Przekazanie odpowiedniego pionka do Move, który jest na tej samej kolumnie i wierszu co w argumencie metody.
     public Figure getFigure(int col, int row){
-
         for(Figure piece : pieces){
             if(piece.col == col && piece.row == row){
                 return piece;

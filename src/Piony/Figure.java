@@ -32,4 +32,12 @@ public abstract class Figure{
 
     public abstract boolean checkIfCollidingWithPiece(int col, int row);
 
+    public boolean checkIfSameTeam(Figure figure1, Figure figure2){
+
+        if(figure1.isWhite == figure2.isWhite){
+            return false;
+        }
+        return true;
+
+    }
 }

@@ -42,6 +42,45 @@ public class Bishop extends Figure {
 
     @Override
     public boolean checkIfCollidingWithPiece(int col, int row) {
+
+        // UP_LEFT
+        if(this.col > col && this.row > row){
+            for(int i = 1; i < Math.abs(this.col - col); i++){
+                if(board.getFigure(this.col - i, this.row - i) != null){
+                    return true;
+                }
+            }
+        }
+
+
+        // UP_RIGHT
+        if(this.col < col && this.row > row){
+            for(int i = 1; i < Math.abs(this.col - col); i++){
+                if(board.getFigure(this.col + i, this.row - i) != null){
+                    return true;
+                }
+            }
+        }
+
+        // DOWN_LEFT
+        if(this.col > col && this.row < row){
+            for(int i = 1; i < Math.abs(this.col - col); i++){
+                if(board.getFigure(this.col - i, this.row + i) != null){
+                    return true;
+                }
+            }
+        }
+
+
+        // DOWN_RIGHT
+        if(this.col < col && this.row < row){
+            for(int i = 1; i < Math.abs(this.col - col); i++){
+                if(board.getFigure(this.col + i, this.row + i) != null){
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
