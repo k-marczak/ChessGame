@@ -18,7 +18,6 @@ public class Board{
 
 
 
-
     // ArrayLista w której są wszystkie figury w grze.
     public ArrayList<Figure> pieces = new ArrayList<>();
 
@@ -68,6 +67,14 @@ public class Board{
 
     // Rysowanie wszystkiego!! Szachowiny oraz piony // Metoda jest wywoływana w JPanel Comp.
     public void paintComponent(Graphics g){
+        // Rysowanie komunikatu na boku ekranu.
+        if(Move.blackTurn){
+            g.drawString("Kolej gracza Czarnego!", 400, 850);
+        } else {
+            g.drawString("Kolej gracza Białego!", 400, 850);
+        }
+
+
         // Rysowanie szachownicy //
         for(int i = 0; i < rows; i++){
             for (int j = 0; j < cols; j++) {

@@ -52,7 +52,6 @@ public class Bishop extends Figure {
             }
         }
 
-
         // UP_RIGHT
         if(this.col < col && this.row > row){
             for(int i = 1; i < Math.abs(this.col - col); i++){
@@ -71,7 +70,6 @@ public class Bishop extends Figure {
             }
         }
 
-
         // DOWN_RIGHT
         if(this.col < col && this.row < row){
             for(int i = 1; i < Math.abs(this.col - col); i++){
@@ -80,7 +78,6 @@ public class Bishop extends Figure {
                 }
             }
         }
-
         return false;
     }
 }

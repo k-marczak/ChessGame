@@ -38,24 +38,42 @@ public class Pawn extends Figure {
     }
 
 
-
-
     @Override
     public boolean validMoves(int col, int row) {
-        if (isFirstMove) {
-            int colorIndex = isWhite ? 2 : -2;
+        int colorIndex = isWhite ? 1 : -1;
+
+
+        // Move pawn through 2 bricks
+        if (isFirstMove && this.col == col && row == this.row - colorIndex * 2 && (board.getFigure(col, row) == null)) {
             isFirstMove = false;
-            return this.col == col && row == this.row - colorIndex && (board.getFigure(col, row) == null);
-        } else {
-            int colorIndex = isWhite ? 1 : -1;
-            return this.col == col && row == this.row - colorIndex && board.getFigure(col, row) == null ;
+            return true;
         }
+
+        // Move pawn through 1 brick
+        if (this.col == col && row == this.row - colorIndex && (board.getFigure(col, row) == null)) {
+            return true;
+        }
+
+        // Bicie Lewa strona
+        if (col == this.col - 1 && row == this.row - colorIndex && board.getFigure(col, row) != null){
+            return true;
+        }
+
+
+        // Bicie Prawa strona
+        if (col == this.col + 1 && row == this.row - colorIndex && board.getFigure(col, row) != null){
+            return true;
+        }
+
+
+
+        return false;
     }
-
-
 
     @Override
     public boolean checkIfCollidingWithPiece(int col, int row) {
         return false;
     }
 }
+
+

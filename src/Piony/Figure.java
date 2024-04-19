@@ -14,6 +14,7 @@ public abstract class Figure{
     public String name;
     public Board board;
     public BufferedImage image;
+    public boolean isFirstMove;
 
 
 
